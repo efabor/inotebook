@@ -16,9 +16,12 @@ public class CommandInterpreterService {
 		  if (valid_expression == true) {
 			  String[] elements = com.getCode().split("\\s");
 
+			  elements = com.getCode().split("%");
+			  elements = elements[1].split(" ");
+			  String compiler = elements[0];
 			  elements = com.getCode().split("%python");
 
-			  CommandRunner commandRunner = new CommandRunner(elements[1]);
+			  CommandRunner commandRunner = new CommandRunner(compiler, elements[1]);
 
 			  try {
 				return commandRunner.runScript();
