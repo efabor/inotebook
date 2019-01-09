@@ -12,7 +12,7 @@ public class CommandRunner {
 	private String script, compiler;
 
 	public CommandRunner(String compiler, String script) {
-		this.script = script;
+		this.script = script.trim();
 		this.compiler = compiler;
 	}
 
